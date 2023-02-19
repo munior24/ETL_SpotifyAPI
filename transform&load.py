@@ -17,7 +17,7 @@ file_names = ['artists_rap', 'artists_k-pop', 'albums_rap','albums_k-pop']
 results = {}
 
 for file_name in file_names:
-    with open(f"./data/{file_name}.json", "r") as f :
+    with open(f"./dashboard/data/{file_name}.json", "r") as f :
         results[file_name] = json.load(f)
 
  #load artists   
