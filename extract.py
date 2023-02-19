@@ -7,13 +7,7 @@ from config import client_id, client_secret
 class Extractor:
     
     def __init__(self, client_id, client_secret, genre):
-        """
-            add db_host as a parameter in db connector and db storage 
-            also port 
-            password
-            user
-
-        """
+       
         self.client_id = client_id
         self.client_secret = client_secret
         self.genre = genre
@@ -52,7 +46,7 @@ class Extractor:
             artists = data["artists"]["items"]
 
         # Repeat the API request to get the next pages of results
-        while len(artists) < 50:
+        while len(artists) < 100:
             params['offset'] += 50
             response = requests.get(url, headers=headers, params=params)
             if response.status_code == 200:
@@ -149,7 +143,7 @@ class Extractor:
 
 
 
-
+#main
 for genre in ['rap', 'k-pop']:
     sp = Extractor(client_id, client_secret, genre )
     sp.get_token()
