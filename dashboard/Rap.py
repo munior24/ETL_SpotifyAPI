@@ -3,11 +3,18 @@ import pandas as pd
 import json
 import altair as alt
 
+st.set_page_config(
+    page_title="Rap",
+    page_icon="🎵",
+)
 
-with open('data/artists_k-pop.json', 'r') as f:
+
+
+
+with open('data/artists_rap.json', 'r') as f:
     data = json.load(f)
 res = []
-for artist in data['artists_k-pop'] :
+for artist in data['artists_rap'] :
         spotify_id = artist['id']
         name = artist['name']
         popularity = artist['popularity']
@@ -35,11 +42,11 @@ for album_ar in data2['albums_rap']:
 df = pd.DataFrame(res, columns=['spotify_id', 'name', 'genre', 'followers', 'popularity', 'image']).iloc[:20, :]
 df2 = pd.DataFrame(res2, columns=['artist_id' ,'name', 'release_date', 'art', 'total_tracks', 'image'])
 df2 = df2.drop_duplicates(subset='name')
-st.sidebar.image('./data/Spotify_icon.svg.png', width=40)
-st.sidebar.title("My Spotify App")
+st.image('./data/Spotify_icon.svg.png', width=40)
+# st.sidebar.title("My Spotify App")
 
 st.title("My Spotify Dashboard")
-st.subheader("Popularity and Followers of RAP genre")
+st.subheader("Popularity and Followers of Rap genre")
 
 col1, col2 = st.columns(2)
 

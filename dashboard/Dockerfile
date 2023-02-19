@@ -8,6 +8,4 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 COPY . /code/
 
-RUN ./s.sh
-
-CMD ["streamlit", "run", "streamlit.py"]
+CMD ["streamlit", "run", "Rap.py"]
