@@ -130,10 +130,8 @@ class Extractor:
 
     def store_data(self, file_name, data):
         
-        """
-            change me
-        """
-        with open(f"./data/{file_name}.json", "w") as f:
+       
+        with open(f"./dashboard/data/{file_name}.json", "w") as f:
             js = {file_name : data}
             json.dump(js, f)
     
