@@ -18,15 +18,15 @@ The script will download data for the specified genres, and save them in separat
 Extractor
 This class is the main class of the script. It initializes with the client ID, client secret, and genre of the music. The class methods are:
 
-get_token() : This method makes a request to the Spotify API to get an access token. It uses the client_id and client_secret to authenticate the request, and stores the access token for future API requests.
+**get_token()** : This method makes a request to the Spotify API to get an access token. It uses the client_id and client_secret to authenticate the request, and stores the access token for future API requests.
 
-get_artists() : This method searches for artists in the specified genre using the Spotify API. It uses the access token obtained from get_token(). It returns a list of artists that match the search criteria.
+**get_artists()** : This method searches for artists in the specified genre using the Spotify API. It uses the access token obtained from get_token(). It returns a list of artists that match the search criteria.
 
-get_albums() : This method retrieves the albums for each artist returned by get_artists(). It returns a list of dictionaries, where each dictionary contains the album details for an artist.
+**get_albums()** : This method retrieves the albums for each artist returned by get_artists(). It returns a list of dictionaries, where each dictionary contains the album details for an artist.
 
-get_song() : This method retrieves the songs from each album returned by get_albums(). It returns a list of dictionaries, where each dictionary contains the song details for an artist and album.
+**get_song()** : This method retrieves the songs from each album returned by get_albums(). It returns a list of dictionaries, where each dictionary contains the song details for an artist and album.
 
-store_data() : This method saves the extracted data to a JSON file.
+**store_data()** : This method saves the extracted data to a JSON file.
 ## Trasnform&load Overview :
 The script performs data loading and transformation operations using Python and PostgreSQL. It loads data from JSON files, filters the data to take only the required columns, and inserts the transformed data into a PostgreSQL database using the psycopg2 connector.
 
@@ -44,11 +44,11 @@ Install Docker on your machine if it's not already installed.
 
 2 - Open a terminal or command prompt and change directory to the dashboard directory  and run the following command to build the Docker image:
 
-docker build -t my-image-name .
+`docker build -t my-image-name` 
 
 3 - Once the image has been built, run the following command to start a Docker container with your Streamlit app:
 
-docker run -p 8501:8501 my-image-name
+`docker run -p 8501:8501 my-image-name`
 
 
 4 - Open a web browser and go to http://localhost:8501 to access the dashboard.
@@ -58,7 +58,7 @@ docker run -p 8501:8501 my-image-name
 
 2 - Open a terminal or command prompt and change directory to the dashboard directory  and run the following command :
 
-streamlit run Rap.py
+`streamlit run Rap.py`
 
 ## Overview :
 This is a Python code for a Spotify dashboard that uses the Streamlit library to display data about rap artists and their albums. The code imports the required libraries such as Streamlit, Pandas, JSON, and Altair. It loads two JSON files containing information about rap artists and their albums respectively, and extracts the necessary information such as artist name, popularity, followers, album name, total tracks, etc.
